@@ -1,0 +1,53 @@
+class Person:
+   # name: str
+   # surname = str()
+   # qualify = int()
+   # sex = str()
+   def __init__(self, name, surname, qualify = 1, sex='male'):
+     self.name = name
+     self.surname = surname
+     self.qualify = qualify
+     self.sex = sex
+
+
+   def __str__(self):
+     # ls = []
+     # return ' '.join(ls)
+    return f'{self.name} {self.surname} {str(self.qualify)}'
+
+   def __del__(self):
+     ls = [self.name, self.surname]
+     if self.sex == 'male':
+        text = "Mr. "
+     else:
+        text = "Mrs. "
+
+     print('Goodbye, ' + text + str(' '.join(ls)))
+
+if __name__ == '__main__':
+   a = Person("Брюс",
+              "Беннер",
+              47)
+
+   b = Person("Джон",
+              "Сина",
+              45)
+
+   c = Person("Дуэйн",
+              "Джонсон",
+              50,
+              "male")
+
+
+
+   d = Person("Дженнифер",
+              "Лопес",
+              53,
+              "female")
+
+   print(a)
+   print(b)
+   print(c)
+   print(d)
+   del(d,c)
+   input('>')
